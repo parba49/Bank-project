@@ -14,6 +14,8 @@ class Bank:
             return f"You don't take that money because of max_withdraw  {self.max_withdraw} taka"
         elif amount > self.balance:
             return "Sorry,not enough money"
+        elif amount == self.min_withdraw:
+            return self.balance
         else:
             self.balance = self.balance-amount
             return f"Here is yuor money : {balance}"
