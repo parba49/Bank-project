@@ -4,6 +4,10 @@ class Bank:
         self.balance = balance
         self.min_withdraw = 500
         self.max_withdraw = 15000
+        
+        
+    
+        
 
     def get_balance(self):
         return self.balance
@@ -14,13 +18,17 @@ class Bank:
             return f"You don't take that money because of max_withdraw  {self.max_withdraw} taka"
         elif amount > self.balance:
             return "Sorry,not enough money"
-        elif amount == self.min_withdraw:
-            return self.balance
+        elif amount == self.balance:
+            return "Done"
+       
+       
         else:
             self.balance = self.balance-amount
-            return f"Here is yuor money : {balance}"
+            return f"Here is your money :{self.balance}"
     def deposit(self, amount):
         self.balance = self.balance + amount
+    
+    
 
 
 def menu():
@@ -43,11 +51,7 @@ while option !=0:
     if option == 1:
         print("Enter amount: ")
         my_bank = Bank(int(input()))
-
-
-
-
-
+       
     elif option == 2:
         print("Your current balance: ")
         print(my_bank.get_balance())
@@ -62,6 +66,7 @@ while option !=0:
     elif option == 4:
         print("How much money do you want to deposite?: ")
         my_bank.deposit(int(input()))
+        print("Here is your money: ")
         print(my_bank.get_balance())
         
     
